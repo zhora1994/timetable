@@ -51,14 +51,14 @@ CREATE TABLE table_info
 CREATE TABLE orders
 (
  id           int NOT NULL,
- table_name   varchar(10) NOT NULL,
+ table_id   varchar(10) NOT NULL,
  slot_id      int NOT NULL,
- login        varchar(50) NOT NULL,
+ uzer_login        varchar(50) NOT NULL,
  ord_date         DATE NOT NULL,
  is_avaliable boolean NOT NULL,
- CONSTRAINT PK_50 PRIMARY KEY ( "id" ),
- CONSTRAINT FK_63 FOREIGN KEY ( "table_name" ) REFERENCES table_info ( "table_name" ),
- CONSTRAINT FK_66 FOREIGN KEY ( login ) REFERENCES "user" ( login ),
+ CONSTRAINT PK_50 PRIMARY KEY ( id ),
+ CONSTRAINT FK_63 FOREIGN KEY ( table_id ) REFERENCES table_info ( id ),
+ CONSTRAINT FK_66 FOREIGN KEY ( uzer_login ) REFERENCES uzer ( login ),
  CONSTRAINT FK_74 FOREIGN KEY ( slot_id ) REFERENCES time_slot ( id ),
  CONSTRAINT unq_key (table_name, ord_date, slot_id)
 );
