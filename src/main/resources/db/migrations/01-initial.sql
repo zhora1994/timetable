@@ -10,7 +10,8 @@ CREATE TABLE uzer
  tg_id   bigint NOT NULL
 );
 
-CREATE TABLE uzer_2_club(
+CREATE TABLE uzer_2_club
+(
     uzer_login varchar(50) NOT NULL,
     club_name varchar(50) NOT NULL,
     is_blocked BOOLEAN,
@@ -60,5 +61,5 @@ CREATE TABLE orders
  CONSTRAINT FK_63 FOREIGN KEY ( table_id ) REFERENCES table_info ( id ),
  CONSTRAINT FK_66 FOREIGN KEY ( uzer_login ) REFERENCES uzer ( login ),
  CONSTRAINT FK_74 FOREIGN KEY ( slot_id ) REFERENCES time_slot ( id ),
- CONSTRAINT unq_key (table_id, ord_date, slot_id)
+ CONSTRAINT unq_key UNIQUE (table_id, ord_date, slot_id)
 );
