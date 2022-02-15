@@ -1,0 +1,30 @@
+version: "3.9"
+services:
+  postgres:
+   image: postgres:13
+   environment:
+    POSTGRES_DB: "main"
+    POSTGRES_USER: "main"
+    POSTGRES_PASSWORD: "main"
+   ports:
+     - '5445:5432'
+   expose:
+     - '5445'
+
+  #mysql:
+  #  image: mysql
+  #  restart: always
+  #  environment:
+  #    MYSQL_ROOT_PASSWORD: example
+  #    MYSQL_USER: example@172.23.0.1
+  #    MYSQL_PASSWORD: example
+  #    MYSQL_DATABASE: example
+  #  ports:
+  #    - "3355:3306"
+  #  expose:
+  #    - '3306'
+  #     volumes:
+  #      - my-db:/var/lib/mysql
+  ## Names our volume
+  #volumes:
+  #  my-db:

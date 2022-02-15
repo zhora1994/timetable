@@ -1,13 +1,13 @@
 CREATE TABLE uzer
 (
- login   varchar(50) PRIMARY KEY,
+ id    int PRIMARY KEY,
  pwd_hash TEXT,
- pwd_salt TEXT,
  email varchar(50) NOT NULL,
  name    varchar(50) NOT NULL,
  surname varchar(50),
- created_at TIMESTAMP WITHOUT TIME ZONE NOT NULL,
- tg_id   bigint NOT NULL
+ created_at TIMESTAMP WITHOUT TIME ZONE NOT NULL DEFAULT now(),
+ tg_id   bigint,
+ CONSTRAINT unq_key UNIQUE (email)
 );
 
 CREATE TABLE uzer_2_club

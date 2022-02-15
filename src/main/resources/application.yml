@@ -1,0 +1,7 @@
+spring:
+  flyway:
+    user: main
+    password: main
+    url: jdbc:postgresql://localhost:5445/main
+    locations: classpath:db/migrations
+    enabled: true
